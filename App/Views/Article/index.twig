@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Website</title>
+</head>
+<body>
+<header>
+    <div class="search">
+        <form action="/" method="get">
+            <input type="text" name="question" placeholder="search...">
+            <label>
+                <input type="date" name="from">
+            </label>
+            <label>
+                <input type="date" name="to">
+            </label>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</header>
+<nav>
+    <div class="home">
+        <a href="/"><img class="home-btn" src="img/home.png"></a>
+    </div>
+    <div class="flags">
+        <form action="/1" method="get">
+            <button class="btn" type="submit" name="country" value="lv"><img class="flag" src="img/lv.png"></button>
+            <button class="btn" type="submit" name="country" value="gb"><img class="flag" src="img/gb.png"></button>
+            <button class="btn" type="submit" name="country" value="us"><img class="flag" src="img/us.png"></button>
+        </form>
+    </div>
+    <div class="categories">
+
+        {% for category in categories %}
+        <form action="/1" method="get">
+                <input type="hidden" name="category" value="{{ category }}">
+                <input type="hidden" name="$language" value="en">
+                <button class="category-btn" type="submit">{{ category }}</button>
+        </form>
+        {% endfor %}
+
+    </div>
+</nav>
+<section>
+    {% for article in articles %}
+        <div class="article-container">
+            <div class="article-image">
+                <img
+                        src="{{ article.getUrlToImage() }}"
+                        alt="{{ article.getTitle() }}"
+                        width="300" height="150"
+                >
+            </div>
+            <div class="article-description">
+                <a href="{{ article.getUrl() }}" target="_blank"><h1>{{ article.getTitle() }}</h1></a>
+                <p>{{ article.getDescription() }}</p>
+                <p>{{ article.getSource() }} | {{ article.getPublishedAt().format('H:i') }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+</body>
+</html>
