@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, serif;
+}
+
+header {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.search {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 30px;
+    padding: 10px;
+}
+
+.search form {
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search input {
+    border: none;
+}
+
+.search button {
+    border: none;
+    background-color: black;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 30px;
+    width: 90px;
+}
+
+nav {
+    width: 100vw;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.home, .flags, .categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-btn {
+    width: 20px;
+    margin: 10px 30px 10px 30px;
+    cursor: pointer;
+}
+
+.btn {
+    width: 30px;
+    border: none;
+    margin: 10px 30px 10px 30px;
+    cursor: pointer;
+}
+
+.flag {
+    width: 100%;
+}
+
+.category-btn {
+    border: none;
+    margin: 10px 30px 10px 30px;
+    cursor: pointer;
+    text-transform: capitalize;
+    background: transparent;
+    font-size: 18px;
+}
+
+img {
+    max-height: 100%;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.article-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.article-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    margin-right: 5px;
+}
+
+.article-description a {
+    text-decoration: none;
+}
+
+.article-description h1 {
+    color: black;
+    align-items: center;
+}
